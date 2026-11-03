@@ -549,7 +549,7 @@
                 try {
                     // Sử dụng endpoint chuẩn xác của 2 API
                     const urlKK = `https://phimapi.com/v1/api/tim-kiem?keyword=${encodeURIComponent(keyword)}&limit=20`;
-                    const urlNC = `https://phim.nguonc.com/api/films/tim-kiem?keyword=${encodeURIComponent(keyword)}`;
+                    const urlNC = `https://phim.nguonc.com/api/films/search?keyword=${encodeURIComponent(keyword)}`;
 
                     const [resKK, resNC] = await Promise.allSettled([
                         fetch(urlKK).then(r => r.json()),
