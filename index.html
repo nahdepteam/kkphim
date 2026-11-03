@@ -109,34 +109,59 @@
         </div>
 
         <!-- VIEW: HOME -->
-        <div id="view-home" class="view-section hidden flex flex-col gap-12">
-            <!-- Phim Nổi Bật (Vuốt ngang - NguonC) -->
+        <div id="view-home" class="view-section hidden flex flex-col gap-10">
+            <!-- Phim Nổi Bật (NguonC) -->
             <section>
-                <div class="flex items-center justify-between mb-5">
+                <div class="flex items-center justify-between mb-4">
                     <h2 class="text-xl font-light text-white flex items-center gap-2 tracking-wide">
-                        <i class="ph ph-trend-up text-accent"></i> Phim Nổi Bật <span class="text-xs text-textMuted bg-surface px-2 py-1 rounded-md ml-2 border border-borderMuted">NguonC</span>
+                        <i class="ph ph-trend-up text-accent"></i> Mới Cập Nhật <span class="text-[10px] text-textMuted bg-surface px-1.5 py-0.5 rounded ml-2 border border-borderMuted uppercase">NguonC</span>
                     </h2>
                 </div>
-                <!-- Container vuốt ngang -->
-                <div id="home-trending-container" class="flex overflow-x-auto gap-4 hide-scrollbar pb-4 snap-x cursor-grab no-select relative w-full">
-                    <!-- Loading placeholder -->
-                    <div class="w-full text-center text-textMuted py-16 bg-surface/30 rounded-xl border border-borderMuted">
-                        <i class="ph ph-spinner animate-spin text-2xl mb-2 inline-block"></i>
+                <div id="home-trending-container" class="drag-scroll flex overflow-x-auto gap-4 hide-scrollbar pb-4 snap-x cursor-grab no-select relative w-full">
+                    <div class="w-full text-center text-textMuted py-10 bg-surface/30 rounded-xl border border-borderMuted">
+                        <i class="ph ph-spinner animate-spin text-2xl"></i>
                     </div>
                 </div>
             </section>
 
-            <!-- Phim Chiếu Rạp / Phim Lẻ (Grid - KKPhim) -->
+            <!-- Phim Lẻ (KKPhim) -->
             <section>
-                <div class="flex items-center justify-between mb-5">
+                <div class="flex items-center justify-between mb-4">
                     <h2 class="text-xl font-light text-white flex items-center gap-2 tracking-wide">
-                        <i class="ph ph-popcorn text-accent"></i> Phim Chiếu Rạp / Lẻ <span class="text-xs text-textMuted bg-surface px-2 py-1 rounded-md ml-2 border border-borderMuted">KKPhim</span>
+                        <i class="ph ph-popcorn text-accent"></i> Phim Lẻ <span class="text-[10px] text-textMuted bg-surface px-1.5 py-0.5 rounded ml-2 border border-borderMuted uppercase">KKPhim</span>
                     </h2>
                 </div>
-                <div id="home-theater-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 md:gap-5">
-                    <!-- Loading placeholder -->
-                    <div class="w-full col-span-full text-center text-textMuted py-16 bg-surface/30 rounded-xl border border-borderMuted">
-                        <i class="ph ph-spinner animate-spin text-2xl mb-2 inline-block"></i>
+                <div id="home-phimle-container" class="drag-scroll flex overflow-x-auto gap-4 hide-scrollbar pb-4 snap-x cursor-grab no-select relative w-full">
+                    <div class="w-full text-center text-textMuted py-10 bg-surface/30 rounded-xl border border-borderMuted">
+                        <i class="ph ph-spinner animate-spin text-2xl"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Phim Bộ (KKPhim) -->
+            <section>
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-light text-white flex items-center gap-2 tracking-wide">
+                        <i class="ph ph-film-strip text-accent"></i> Phim Bộ (Dài Tập) <span class="text-[10px] text-textMuted bg-surface px-1.5 py-0.5 rounded ml-2 border border-borderMuted uppercase">KKPhim</span>
+                    </h2>
+                </div>
+                <div id="home-phimbo-container" class="drag-scroll flex overflow-x-auto gap-4 hide-scrollbar pb-4 snap-x cursor-grab no-select relative w-full">
+                    <div class="w-full text-center text-textMuted py-10 bg-surface/30 rounded-xl border border-borderMuted">
+                        <i class="ph ph-spinner animate-spin text-2xl"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hoạt Hình (KKPhim) -->
+            <section>
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-xl font-light text-white flex items-center gap-2 tracking-wide">
+                        <i class="ph ph-alien text-accent"></i> Phim Hoạt Hình <span class="text-[10px] text-textMuted bg-surface px-1.5 py-0.5 rounded ml-2 border border-borderMuted uppercase">KKPhim</span>
+                    </h2>
+                </div>
+                <div id="home-hoathinh-container" class="drag-scroll flex overflow-x-auto gap-4 hide-scrollbar pb-4 snap-x cursor-grab no-select relative w-full">
+                    <div class="w-full text-center text-textMuted py-10 bg-surface/30 rounded-xl border border-borderMuted">
+                        <i class="ph ph-spinner animate-spin text-2xl"></i>
                     </div>
                 </div>
             </section>
@@ -185,7 +210,7 @@
                         </div>
                     </div>
 
-                    <!-- Thông báo đồng bộ (nhỏ gọn) -->
+                    <!-- Thông báo đồng bộ -->
                     <div id="sync-notification" class="hidden flex items-center justify-between bg-surface border border-borderMuted text-textMuted px-4 py-2.5 rounded-lg text-sm transition-all duration-300">
                         <div class="flex items-center gap-3">
                             <i class="ph ph-cloud-check text-accent text-lg"></i> 
@@ -196,7 +221,24 @@
                     <!-- Chi tiết phim -->
                     <div class="pt-2 bg-surface/30 p-6 rounded-xl border border-borderMuted">
                         <h1 id="detail-title" class="text-2xl md:text-3xl font-medium text-white mb-1"></h1>
-                        <p id="detail-origin-name" class="text-textMuted text-sm mb-6 font-light italic"></p>
+                        <p id="detail-origin-name" class="text-textMuted text-sm mb-4 font-light italic"></p>
+                        
+                        <!-- Thêm: Meta data (Year, IMDb, Quality, Genres) -->
+                        <div class="flex flex-wrap items-center gap-3 text-xs mb-6">
+                            <span class="flex items-center gap-1 bg-surfaceHover text-textMain px-2.5 py-1 rounded border border-borderMuted shadow-sm">
+                                <i class="ph ph-calendar-blank text-accent"></i> <span id="detail-year" class="font-medium">N/A</span>
+                            </span>
+                            <span class="flex items-center gap-1 bg-yellow-900/20 text-yellow-500 border border-yellow-700/50 px-2.5 py-1 rounded shadow-sm">
+                                <i class="ph-fill ph-star"></i> <span id="detail-rating" class="font-medium">N/A</span>
+                            </span>
+                            <span class="flex items-center gap-1 bg-surfaceHover text-textMain px-2.5 py-1 rounded border border-borderMuted shadow-sm">
+                                <i class="ph ph-monitor-play text-accent"></i> <span id="detail-quality" class="font-medium">N/A</span>
+                            </span>
+                            <div id="detail-genres" class="flex flex-wrap gap-2 ml-1">
+                                <!-- Thẻ thể loại được chèn qua JS -->
+                            </div>
+                        </div>
+
                         <div class="prose prose-invert prose-slate max-w-none text-sm text-textMain leading-relaxed opacity-90">
                             <div id="detail-content"></div>
                         </div>
@@ -246,9 +288,7 @@
     <!-- HỆ THỐNG APP LOGIC -->
     <script>
         /**
-         * ==========================================
-         * 1. CẤU HÌNH ĐỒNG BỘ ĐÁM MÂY (JSONBin.io)
-         * ==========================================
+         * 1. CẤU HÌNH ĐỒNG BỘ ĐÁM MÂY
          */
         const CLOUD_SYNC = {
             enabled: true,
@@ -257,46 +297,30 @@
         };
 
         /**
-         * ==========================================
          * 2. TIỆN ÍCH XỬ LÝ ẢNH
-         * ==========================================
          */
         function getSafeImageUrl(domain, path) {
             const fallback = 'https://placehold.co/300x450/1e293b/94a3b8?text=No+Image';
             if (!path) return fallback;
             if (path.startsWith('http')) return path;
-            
-            // Xử lý chuẩn hóa tên miền và path để có đúng 1 dấu "/"
             const safeDomain = domain ? domain.replace(/\/$/, '') : '';
             const safePath = path.replace(/^\//, '');
             return safeDomain ? `${safeDomain}/${safePath}` : fallback;
         }
 
         /**
-         * ==========================================
-         * 3. MODULE QUẢN LÝ LỊCH SỬ (Local + Cloud)
-         * ==========================================
+         * 3. QUẢN LÝ LỊCH SỬ
          */
         const HistoryManager = {
             storageKey: 'cinesync_history_v2',
             cloudDataCache: null,
-            isFetchingCloud: false,
             syncTimer: null,
             
             async init() {
-                // Thử load từ localStorage ngay lập tức để có dữ liệu phản hồi nhanh
                 const localStr = localStorage.getItem(this.storageKey);
-                if (localStr) {
-                    try { this.cloudDataCache = JSON.parse(localStr); } 
-                    catch (e) { this.cloudDataCache = {}; }
-                } else {
-                    this.cloudDataCache = {};
-                }
+                this.cloudDataCache = localStr ? JSON.parse(localStr) : {};
 
-                // Gọi JSONBin ngầm trên background
                 if (CLOUD_SYNC.enabled) {
-                    this.isFetchingCloud = true;
-                    this.updateSyncUI(true, 'Đang tải Cloud...');
                     try {
                         const res = await fetch(`https://api.jsonbin.io/v3/b/${CLOUD_SYNC.BIN_ID}/latest`, {
                             headers: { 'X-Master-Key': CLOUD_SYNC.API_KEY }
@@ -304,98 +328,55 @@
                         if (res.ok) {
                             const json = await res.json();
                             if (json && json.record && !Array.isArray(json.record)) {
-                                // Ghi đè local bằng cloud
                                 this.cloudDataCache = json.record;
                                 localStorage.setItem(this.storageKey, JSON.stringify(this.cloudDataCache));
                             }
                         }
-                    } catch (e) {
-                        console.error("Lỗi đồng bộ mây:", e);
-                    } finally {
-                        this.isFetchingCloud = false;
-                        this.updateSyncUI(false, 'Đã đồng bộ');
-                    }
+                    } catch (e) { console.error("Lỗi đồng bộ mây:", e); }
                 }
             },
-
-            updateSyncUI(isLoading, text) {
-                const spinner = document.getElementById('history-sync-spinner');
-                const textEl = document.getElementById('history-sync-text');
-                if(spinner) isLoading ? spinner.classList.remove('hidden') : spinner.classList.add('hidden');
-                if(textEl) textEl.textContent = text;
-            },
-
-            async getHistory() {
-                if (!this.cloudDataCache) await this.init();
-                return this.cloudDataCache;
-            },
-
+            async getHistory() { return this.cloudDataCache || {}; },
             async saveProgress(movieData, episodeData, currentTime, duration) {
                 if (!movieData || !episodeData || currentTime < 5) return false;
-
                 const id = movieData.slug;
-                
-                // Cập nhật Cache Local
                 this.cloudDataCache[id] = {
-                    id: id,
-                    name: movieData.name,
-                    thumb: movieData.thumb_url,
-                    source: movieData.source,
+                    id: id, name: movieData.name, thumb: movieData.thumb_url, source: movieData.source,
                     currentEpisode: { name: episodeData.name, slug: episodeData.slug },
-                    currentTime: currentTime,
-                    duration: duration || 0,
-                    updatedAt: Date.now()
+                    currentTime: currentTime, duration: duration || 0, updatedAt: Date.now()
                 };
-
-                // Lưu LocalStorage lập tức (Debounce chống giật nếu cần)
                 localStorage.setItem(this.storageKey, JSON.stringify(this.cloudDataCache));
 
-                // Debounce/Throttle Push lên Cloud (Giới hạn 15s / 1 lần gọi API PUT)
                 if (CLOUD_SYNC.enabled && !this.syncTimer) {
                     this.syncTimer = setTimeout(async () => {
                         this.syncTimer = null;
                         try {
                             await fetch(`https://api.jsonbin.io/v3/b/${CLOUD_SYNC.BIN_ID}`, {
-                                method: 'PUT',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'X-Master-Key': CLOUD_SYNC.API_KEY
-                                },
+                                method: 'PUT', headers: { 'Content-Type': 'application/json', 'X-Master-Key': CLOUD_SYNC.API_KEY },
                                 body: JSON.stringify(this.cloudDataCache)
                             });
-                        } catch (e) { console.error("Lỗi đẩy Cloud", e); }
+                        } catch (e) {}
                     }, 15000);
                 }
                 return true;
             },
-
-            async getMovieProgress(slug) {
-                return this.cloudDataCache ? this.cloudDataCache[slug] : null;
-            }
+            async getMovieProgress(slug) { return this.cloudDataCache ? this.cloudDataCache[slug] : null; }
         };
 
         /**
-         * ==========================================
          * 4. APP LOGIC CHÍNH
-         * ==========================================
          */
         const app = {
-            hls: null,
-            currentView: '',
-            currentMovie: null,
-            currentEpisode: null,
-            lastSaveTime: 0,
-            saveInterval: 5,
-            homeLoaded: false,
+            hls: null, currentView: '', currentMovie: null, currentEpisode: null,
+            lastSaveTime: 0, saveInterval: 5, homeLoaded: false,
             
             init() {
-                HistoryManager.init(); // Kích hoạt kéo Cloud History ngầm
+                HistoryManager.init();
                 this.bindEvents();
+                this.initDragScrolls();
                 this.navigate('home');
             },
 
             bindEvents() {
-                // Tìm kiếm Form
                 const searchForm = document.getElementById('search-form');
                 searchForm.addEventListener('submit', (e) => {
                     e.preventDefault();
@@ -406,7 +387,6 @@
                     }
                 });
 
-                // Lưu tiến trình Player
                 const video = document.getElementById('player');
                 video.addEventListener('timeupdate', () => {
                     const now = video.currentTime;
@@ -415,66 +395,46 @@
                         this.lastSaveTime = now;
                     }
                 });
-
-                // Thiết lập vuốt ngang cho trang chủ Nổi Bật
-                this.initDragScroll('home-trending-container');
             },
 
-            // Kỹ thuật vuốt mượt ngang bằng chuột & tránh vô tình click
-            initDragScroll(containerId) {
-                const slider = document.getElementById(containerId);
-                if (!slider) return;
-                
-                let isDown = false;
-                let startX;
-                let scrollLeft;
-                let dragged = false; // Phân biệt click vs drag
+            // Kích hoạt tính năng kéo/vuốt mượt cho tất cả các container danh mục ngang
+            initDragScrolls() {
+                document.querySelectorAll('.drag-scroll').forEach(slider => {
+                    let isDown = false;
+                    let startX;
+                    let scrollLeft;
+                    let dragged = false;
 
-                slider.addEventListener('mousedown', (e) => {
-                    isDown = true;
-                    dragged = false;
-                    slider.classList.add('cursor-grabbing');
-                    slider.classList.remove('cursor-grab');
-                    startX = e.pageX - slider.offsetLeft;
-                    scrollLeft = slider.scrollLeft;
-                });
-
-                slider.addEventListener('mouseleave', () => {
-                    isDown = false;
-                    slider.classList.remove('cursor-grabbing');
-                    slider.classList.add('cursor-grab');
-                });
-
-                slider.addEventListener('mouseup', () => {
-                    isDown = false;
-                    slider.classList.remove('cursor-grabbing');
-                    slider.classList.add('cursor-grab');
-                });
-
-                slider.addEventListener('mousemove', (e) => {
-                    if (!isDown) return;
-                    e.preventDefault();
-                    const x = e.pageX - slider.offsetLeft;
-                    const walk = (x - startX) * 2; // Hệ số tốc độ cuộn
-                    if (Math.abs(x - startX) > 5) dragged = true;
-                    slider.scrollLeft = scrollLeft - walk;
-                });
-
-                // Ngăn click nếu vừa kéo
-                slider.addEventListener('click', (e) => {
-                    if (dragged) {
+                    slider.addEventListener('mousedown', (e) => {
+                        isDown = true; dragged = false;
+                        slider.classList.add('cursor-grabbing'); slider.classList.remove('cursor-grab');
+                        startX = e.pageX - slider.offsetLeft;
+                        scrollLeft = slider.scrollLeft;
+                    });
+                    slider.addEventListener('mouseleave', () => {
+                        isDown = false;
+                        slider.classList.remove('cursor-grabbing'); slider.classList.add('cursor-grab');
+                    });
+                    slider.addEventListener('mouseup', () => {
+                        isDown = false;
+                        slider.classList.remove('cursor-grabbing'); slider.classList.add('cursor-grab');
+                    });
+                    slider.addEventListener('mousemove', (e) => {
+                        if (!isDown) return;
                         e.preventDefault();
-                        e.stopPropagation();
-                    }
-                }, true); // Bắt ở capture phase
+                        const x = e.pageX - slider.offsetLeft;
+                        const walk = (x - startX) * 2;
+                        if (Math.abs(x - startX) > 5) dragged = true;
+                        slider.scrollLeft = scrollLeft - walk;
+                    });
+                    slider.addEventListener('click', (e) => {
+                        if (dragged) { e.preventDefault(); e.stopPropagation(); }
+                    }, true);
+                });
             },
 
             navigate(viewName, params = {}) {
-                // Tắt nhạc/video nếu rời trang detail
-                if (this.currentView === 'detail' && viewName !== 'detail') {
-                    this.stopPlayer();
-                }
-
+                if (this.currentView === 'detail' && viewName !== 'detail') this.stopPlayer();
                 this.currentView = viewName;
                 document.querySelectorAll('.view-section').forEach(el => el.classList.add('hidden'));
                 const viewEl = document.getElementById(`view-${viewName}`);
@@ -495,59 +455,55 @@
             },
 
             /**
-             * ==========================================
-             * 5. API FETCH & HIỂN THỊ
-             * ==========================================
+             * 5. API FETCH - TẢI NHIỀU HẠNG MỤC TRANG CHỦ
              */
-            
             async loadHomePage() {
                 if (this.homeLoaded) return;
                 this.homeLoaded = true;
                 
                 try {
-                    // 1. Fetch Nổi Bật từ NguonC
-                    fetch('https://phim.nguonc.com/api/films/phim-moi-cap-nhat?page=1')
-                        .then(r => r.json())
-                        .then(res => {
-                            if (res && res.items) {
-                                const trending = res.items.slice(0, 15).map(item => ({
-                                    source: 'nguonc',
-                                    name: item.name,
-                                    origin_name: item.original_name || item.origin_name || '',
-                                    slug: item.slug,
-                                    thumb_url: getSafeImageUrl('', item.thumb_url)
-                                }));
-                                this.renderList(trending, 'home-trending-container', true);
-                            }
-                        }).catch(e => console.error("Lỗi NguonC:", e));
+                    // 1. Phim Nổi Bật (NguonC)
+                    fetch('https://phim.nguonc.com/api/films/phim-moi-cap-nhat?page=1').then(r => r.json()).then(res => {
+                        if (res?.items) {
+                            const items = res.items.slice(0, 15).map(i => ({ source: 'nguonc', name: i.name, origin_name: i.original_name || i.origin_name, slug: i.slug, thumb_url: getSafeImageUrl('', i.thumb_url) }));
+                            this.renderList(items, 'home-trending-container', true);
+                        }
+                    });
 
-                    // 2. Fetch Phim Lẻ từ KKPhim
-                    fetch('https://phimapi.com/v1/api/danh-sach/phim-le')
-                        .then(r => r.json())
-                        .then(res => {
-                            if (res?.data?.items) {
-                                const imageDomain = res.data.APP_DOMAIN_CDN_IMAGE;
-                                const theaters = res.data.items.slice(0, 18).map(item => ({
-                                    source: 'kkphim',
-                                    name: item.name,
-                                    origin_name: item.origin_name,
-                                    slug: item.slug,
-                                    thumb_url: getSafeImageUrl(imageDomain, item.thumb_url)
-                                }));
-                                this.renderList(theaters, 'home-theater-container', false);
-                            }
-                        }).catch(e => console.error("Lỗi KKPhim:", e));
-                } catch (e) {
-                    console.error("Lỗi home", e);
-                }
+                    // 2. Phim Lẻ (KKPhim)
+                    fetch('https://phimapi.com/v1/api/danh-sach/phim-le?limit=15').then(r => r.json()).then(res => {
+                        if (res?.data?.items) {
+                            const domain = res.data.APP_DOMAIN_CDN_IMAGE;
+                            const items = res.data.items.map(i => ({ source: 'kkphim', name: i.name, origin_name: i.origin_name, slug: i.slug, thumb_url: getSafeImageUrl(domain, i.thumb_url) }));
+                            this.renderList(items, 'home-phimle-container', true);
+                        }
+                    });
+
+                    // 3. Phim Bộ (KKPhim)
+                    fetch('https://phimapi.com/v1/api/danh-sach/phim-bo?limit=15').then(r => r.json()).then(res => {
+                        if (res?.data?.items) {
+                            const domain = res.data.APP_DOMAIN_CDN_IMAGE;
+                            const items = res.data.items.map(i => ({ source: 'kkphim', name: i.name, origin_name: i.origin_name, slug: i.slug, thumb_url: getSafeImageUrl(domain, i.thumb_url) }));
+                            this.renderList(items, 'home-phimbo-container', true);
+                        }
+                    });
+
+                    // 4. Hoạt Hình (KKPhim)
+                    fetch('https://phimapi.com/v1/api/danh-sach/hoat-hinh?limit=15').then(r => r.json()).then(res => {
+                        if (res?.data?.items) {
+                            const domain = res.data.APP_DOMAIN_CDN_IMAGE;
+                            const items = res.data.items.map(i => ({ source: 'kkphim', name: i.name, origin_name: i.origin_name, slug: i.slug, thumb_url: getSafeImageUrl(domain, i.thumb_url) }));
+                            this.renderList(items, 'home-hoathinh-container', true);
+                        }
+                    });
+
+                } catch (e) { console.error("Lỗi home", e); }
             },
 
             async executeSearch(keyword) {
                 this.toggleLoading(true);
                 document.getElementById('search-keyword-display').textContent = keyword;
-                
                 try {
-                    // Sử dụng endpoint chuẩn xác của 2 API
                     const urlKK = `https://phimapi.com/v1/api/tim-kiem?keyword=${encodeURIComponent(keyword)}&limit=20`;
                     const urlNC = `https://phim.nguonc.com/api/films/search?keyword=${encodeURIComponent(keyword)}`;
 
@@ -557,39 +513,17 @@
                     ]);
 
                     let results = [];
-
-                    // Xử lý KKPhim
                     if (resKK.status === 'fulfilled' && resKK.value) {
                         const data = resKK.value.data?.items || [];
                         const domain = resKK.value.data?.APP_DOMAIN_CDN_IMAGE || '';
-                        const mapped = data.map(item => ({
-                            source: 'kkphim',
-                            name: item.name,
-                            origin_name: item.origin_name,
-                            slug: item.slug,
-                            thumb_url: getSafeImageUrl(domain, item.thumb_url)
-                        }));
-                        results.push(...mapped);
+                        results.push(...data.map(i => ({ source: 'kkphim', name: i.name, origin_name: i.origin_name, slug: i.slug, thumb_url: getSafeImageUrl(domain, i.thumb_url) })));
                     }
-
-                    // Xử lý NguonC
                     if (resNC.status === 'fulfilled' && resNC.value?.items) {
-                        const mapped = resNC.value.items.map(item => ({
-                            source: 'nguonc',
-                            name: item.name,
-                            origin_name: item.original_name || item.origin_name,
-                            slug: item.slug,
-                            thumb_url: getSafeImageUrl('', item.thumb_url)
-                        }));
-                        results.push(...mapped);
+                        results.push(...resNC.value.items.map(i => ({ source: 'nguonc', name: i.name, origin_name: i.original_name || i.origin_name, slug: i.slug, thumb_url: getSafeImageUrl('', i.thumb_url) })));
                     }
-
                     this.renderSearch(results);
-                } catch (error) {
-                    console.error("Lỗi Search:", error);
-                } finally {
-                    this.toggleLoading(false);
-                }
+                } catch (error) { console.error("Lỗi Search:", error); } 
+                finally { this.toggleLoading(false); }
             },
 
             async loadDetail(slug, source) {
@@ -602,42 +536,40 @@
                     if (source === 'kkphim') {
                         const res = await fetch(`https://phimapi.com/phim/${slug}`).then(r => r.json());
                         if (res.status && res.movie) {
+                            const m = res.movie;
                             movie = {
-                                source: 'kkphim',
-                                slug: res.movie.slug,
-                                name: res.movie.name,
-                                origin_name: res.movie.origin_name,
-                                content: res.movie.content,
-                                thumb_url: getSafeImageUrl('', res.movie.thumb_url),
-                                episodes: res.episodes.map(server => ({
-                                    server_name: server.server_name,
-                                    items: server.server_data.map(ep => ({
-                                        name: ep.name,
-                                        slug: ep.slug,
-                                        link_m3u8: ep.link_m3u8
-                                    }))
-                                }))
+                                source: 'kkphim', slug: m.slug, name: m.name, origin_name: m.origin_name,
+                                content: m.content, thumb_url: getSafeImageUrl('', m.thumb_url),
+                                // Metadata bổ sung
+                                year: m.year || 'N/A',
+                                rating: m.tmdb?.vote_average ? `${m.tmdb.vote_average}/10` : 'N/A',
+                                quality: m.quality || m.lang || 'FHD',
+                                genres: m.category ? m.category.map(c => c.name) : [],
+                                episodes: res.episodes.map(s => ({ server_name: s.server_name, items: s.server_data.map(ep => ({ name: ep.name, slug: ep.slug, link_m3u8: ep.link_m3u8 })) }))
                             };
                         }
                     } 
                     else if (source === 'nguonc') {
                         const res = await fetch(`https://phim.nguonc.com/api/film/${slug}`).then(r => r.json());
                         if (res.status === 'success' && res.movie) {
+                            const m = res.movie;
+                            let nGenres = [], nYear = 'N/A';
+                            // Trích xuất metadata từ NguonC
+                            if (m.category) {
+                                try {
+                                    nGenres = m.category['1']?.list?.map(i => i.name) || [];
+                                    nYear = m.category['3']?.list?.[0]?.name || 'N/A';
+                                } catch(e){}
+                            }
                             movie = {
-                                source: 'nguonc',
-                                slug: res.movie.slug,
-                                name: res.movie.name,
-                                origin_name: res.movie.original_name,
-                                content: res.movie.description || 'Chưa cập nhật nội dung.',
-                                thumb_url: getSafeImageUrl('', res.movie.thumb_url),
-                                episodes: res.movie.episodes.map(server => ({
-                                    server_name: server.server_name,
-                                    items: server.items.map(ep => ({
-                                        name: ep.name,
-                                        slug: ep.slug,
-                                        link_m3u8: ep.m3u8
-                                    }))
-                                }))
+                                source: 'nguonc', slug: m.slug, name: m.name, origin_name: m.original_name,
+                                content: m.description || 'Chưa cập nhật nội dung.', thumb_url: getSafeImageUrl('', m.thumb_url),
+                                // Metadata bổ sung
+                                year: nYear,
+                                rating: 'N/A', // NguonC không cung cấp ổn định điểm IMDb
+                                quality: m.quality || m.language || 'FHD',
+                                genres: nGenres,
+                                episodes: m.episodes.map(s => ({ server_name: s.server_name, items: s.items.map(ep => ({ name: ep.name, slug: ep.slug, link_m3u8: ep.m3u8 })) }))
                             };
                         }
                     }
@@ -645,21 +577,14 @@
                     if (!movie) throw new Error("API trống");
                     this.currentMovie = movie;
                     this.renderDetail(movie);
-
                 } catch (error) {
-                    alert("Không tải được chi tiết phim này.");
-                    this.navigate('home');
-                } finally {
-                    this.toggleLoading(false);
-                }
+                    alert("Không tải được chi tiết phim này."); this.navigate('home');
+                } finally { this.toggleLoading(false); }
             },
 
             /**
-             * ==========================================
-             * 6. RENDER COMPONENTS
-             * ==========================================
+             * 6. RENDER HÌNH ẢNH VÀ CHI TIẾT
              */
-
             renderList(items, containerId, isHorizontal) {
                 const container = document.getElementById(containerId);
                 if (!container) return;
@@ -667,15 +592,10 @@
 
                 items.forEach(item => {
                     const card = document.createElement('div');
-                    // Style phân biệt scroll ngang và lưới
-                    if (isHorizontal) {
-                        card.className = 'group cursor-pointer flex-none w-[140px] sm:w-[160px] md:w-[180px] snap-start relative flex flex-col no-select';
-                    } else {
-                        card.className = 'group cursor-pointer flex flex-col relative';
-                    }
+                    if (isHorizontal) card.className = 'group cursor-pointer flex-none w-[140px] sm:w-[160px] md:w-[180px] snap-start relative flex flex-col no-select';
+                    else card.className = 'group cursor-pointer flex flex-col relative';
                     
                     card.onclick = () => this.navigate('detail', { slug: item.slug, source: item.source });
-
                     const badgeClass = item.source === 'kkphim' ? 'bg-indigo-900/80 text-indigo-200 border-indigo-700/50' : 'bg-teal-900/80 text-teal-200 border-teal-700/50';
 
                     card.innerHTML = `
@@ -701,14 +621,8 @@
                 const container = document.getElementById('search-grid');
                 const empty = document.getElementById('search-empty');
                 container.innerHTML = '';
-
-                if (items.length === 0) {
-                    empty.classList.remove('hidden');
-                    return;
-                }
+                if (items.length === 0) { empty.classList.remove('hidden'); return; }
                 empty.classList.add('hidden');
-                
-                // Tái sử dụng logic render list nhưng dưới dạng grid
                 this.renderList(items, 'search-grid', false);
             },
 
@@ -717,6 +631,22 @@
                 document.getElementById('detail-origin-name').textContent = movie.origin_name;
                 document.getElementById('detail-breadcrumb-name').textContent = movie.name;
                 document.getElementById('detail-content').innerHTML = movie.content;
+                
+                // Inject metadata
+                document.getElementById('detail-year').textContent = movie.year;
+                document.getElementById('detail-rating').textContent = movie.rating;
+                document.getElementById('detail-quality').textContent = movie.quality;
+                
+                const genresContainer = document.getElementById('detail-genres');
+                genresContainer.innerHTML = '';
+                if (movie.genres && movie.genres.length > 0) {
+                    movie.genres.forEach(g => {
+                        const span = document.createElement('span');
+                        span.className = 'px-2 py-1 bg-surface border border-borderMuted text-textMuted rounded text-[10px] uppercase font-bold tracking-wider hover:text-white transition-colors cursor-default';
+                        span.textContent = g;
+                        genresContainer.appendChild(span);
+                    });
+                }
 
                 const badge = document.getElementById('detail-source-badge');
                 badge.textContent = movie.source;
@@ -727,10 +657,8 @@
                 const epContainer = document.getElementById('episodes-container');
                 epContainer.innerHTML = '';
                 
-                // Xác định tập Resume từ Cloud/Local
                 const historyRecord = await HistoryManager.getMovieProgress(movie.slug);
-                let defaultEp = null;
-                let resumeTime = 0;
+                let defaultEp = null; let resumeTime = 0;
 
                 movie.episodes.forEach(server => {
                     const block = document.createElement('div');
@@ -741,17 +669,14 @@
                     server.items.forEach(ep => {
                         if (!defaultEp) defaultEp = ep;
                         if (historyRecord && historyRecord.currentEpisode.slug === ep.slug) {
-                            defaultEp = ep;
-                            resumeTime = historyRecord.currentTime;
+                            defaultEp = ep; resumeTime = historyRecord.currentTime;
                         }
 
                         const btn = document.createElement('button');
                         btn.id = `btn-ep-${ep.slug}`;
                         btn.className = 'ep-btn w-full py-2 px-2 text-xs font-medium rounded bg-base border border-borderMuted text-textMuted hover:text-white hover:border-accent transition-colors truncate outline-none';
                         btn.textContent = ep.name;
-                        // Click tay -> phát từ giây 0
                         btn.onclick = () => this.playEpisode(ep, 0); 
-                        
                         grid.appendChild(btn);
                     });
                     block.appendChild(grid);
@@ -769,16 +694,11 @@
                 
                 container.innerHTML = '';
                 const items = Object.values(historyData).sort((a, b) => b.updatedAt - a.updatedAt);
-
-                if (items.length === 0) {
-                    empty.classList.remove('hidden');
-                    return;
-                }
+                if (items.length === 0) { empty.classList.remove('hidden'); return; }
                 empty.classList.add('hidden');
 
                 items.forEach(item => {
                     const progress = item.duration ? Math.min((item.currentTime / item.duration) * 100, 100) : 0;
-                    
                     const card = document.createElement('div');
                     card.className = 'flex gap-3 p-3 rounded-xl border border-borderMuted bg-surface hover:border-accent cursor-pointer transition-colors group shadow-md';
                     card.onclick = () => this.navigate('detail', { slug: item.id, source: item.source });
@@ -814,12 +734,10 @@
                 if (HistoryManager.cloudDataCache[id]) {
                     delete HistoryManager.cloudDataCache[id];
                     localStorage.setItem(HistoryManager.storageKey, JSON.stringify(HistoryManager.cloudDataCache));
-                    // Force PUT to cloud
                     if (CLOUD_SYNC.enabled) {
                         try {
                             await fetch(`https://api.jsonbin.io/v3/b/${CLOUD_SYNC.BIN_ID}`, {
-                                method: 'PUT',
-                                headers: { 'Content-Type': 'application/json', 'X-Master-Key': CLOUD_SYNC.API_KEY },
+                                method: 'PUT', headers: { 'Content-Type': 'application/json', 'X-Master-Key': CLOUD_SYNC.API_KEY },
                                 body: JSON.stringify(HistoryManager.cloudDataCache)
                             });
                         } catch(e){}
@@ -829,22 +747,13 @@
             },
 
             /**
-             * ==========================================
              * 7. PLAYER LOGIC (HLS.js)
-             * ==========================================
              */
-
             playFirstAvailableEpisode() {
-                if (this.currentMovie?.resumeEp) {
-                    this.playEpisode(this.currentMovie.resumeEp, this.currentMovie.resumeTime);
-                }
+                if (this.currentMovie?.resumeEp) { this.playEpisode(this.currentMovie.resumeEp, this.currentMovie.resumeTime); }
             },
-
             playEpisode(episodeData, resumeTime = 0) {
-                this.currentEpisode = episodeData;
-                this.lastSaveTime = resumeTime;
-
-                // UI Nút tập phim
+                this.currentEpisode = episodeData; this.lastSaveTime = resumeTime;
                 document.querySelectorAll('.ep-btn').forEach(btn => {
                     btn.classList.remove('bg-accent', 'text-slate-900', 'border-transparent', 'shadow-md');
                     btn.classList.add('bg-base', 'text-textMuted', 'border-borderMuted');
@@ -854,66 +763,41 @@
                     activeBtn.classList.remove('bg-base', 'text-textMuted', 'border-borderMuted');
                     activeBtn.classList.add('bg-accent', 'text-slate-900', 'border-transparent', 'shadow-md');
                 }
-
                 document.getElementById('player-overlay').classList.add('hidden');
-
                 const video = document.getElementById('player');
                 const sourceUrl = episodeData.link_m3u8;
 
-                if (this.hls) {
-                    this.hls.destroy();
-                    this.hls = null;
-                }
+                if (this.hls) { this.hls.destroy(); this.hls = null; }
 
                 if (Hls.isSupported()) {
                     this.hls = new Hls({ maxBufferLength: 30 });
-                    this.hls.loadSource(sourceUrl);
-                    this.hls.attachMedia(video);
-                    
+                    this.hls.loadSource(sourceUrl); this.hls.attachMedia(video);
                     this.hls.on(Hls.Events.MANIFEST_PARSED, () => {
-                        if (resumeTime > 5) {
-                            video.currentTime = resumeTime;
-                            this.showSyncNotify(`Tiếp tục xem tập ${episodeData.name}`);
-                        }
-                        video.play().catch(e => console.log("Autoplay bị chặn bởi trình duyệt"));
+                        if (resumeTime > 5) { video.currentTime = resumeTime; this.showSyncNotify(`Tiếp tục xem tập ${episodeData.name}`); }
+                        video.play().catch(e => console.log("Autoplay blocked"));
                     });
                 } 
                 else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                     video.src = sourceUrl;
                     video.addEventListener('loadedmetadata', function onLoaded() {
-                        if (resumeTime > 5) {
-                            video.currentTime = resumeTime;
-                            app.showSyncNotify(`Tiếp tục xem tập ${episodeData.name}`);
-                        }
-                        video.play();
-                        video.removeEventListener('loadedmetadata', onLoaded);
+                        if (resumeTime > 5) { video.currentTime = resumeTime; app.showSyncNotify(`Tiếp tục xem tập ${episodeData.name}`); }
+                        video.play(); video.removeEventListener('loadedmetadata', onLoaded);
                     });
                 }
             },
-
             stopPlayer() {
                 const video = document.getElementById('player');
-                video.pause();
-                video.removeAttribute('src');
-                video.load();
-                if (this.hls) {
-                    this.hls.destroy();
-                    this.hls = null;
-                }
+                video.pause(); video.removeAttribute('src'); video.load();
+                if (this.hls) { this.hls.destroy(); this.hls = null; }
                 this.currentEpisode = null;
             },
-
             async triggerSync(currentTime, duration) {
                 const success = await HistoryManager.saveProgress(this.currentMovie, this.currentEpisode, currentTime, duration);
-                if (success && Math.random() < 0.1) { // 10% cơ hội hiện thông báo để UI đỡ rối
-                    this.showSyncNotify("Đã lưu tiến trình ngầm");
-                }
+                if (success && Math.random() < 0.1) { this.showSyncNotify("Đã lưu tiến trình ngầm"); }
             },
-
             showSyncNotify(message) {
                 const box = document.getElementById('sync-notification');
                 document.getElementById('sync-message').textContent = message;
-                
                 box.classList.remove('hidden');
                 setTimeout(() => box.classList.add('hidden'), 3000);
             }
@@ -921,7 +805,6 @@
 
         // Khởi động
         document.addEventListener('DOMContentLoaded', () => app.init());
-
     </script>
 </body>
 </html>
